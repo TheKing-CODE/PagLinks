@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;    
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background: url('/img/fundo.gif') no-repeat center center fixed;    
+    background-size: cover;
+}
+
+.contanier{
+    display: grid;
+    width: 500px;
+    height: 500px;
+    border-style: solid;
+    border-radius: 3%;
+    border-color: #dad6ca;
+    background-color: #dad6ca;
+}
+
+.contanier{
+    display: grid;
+    justify-content: center;        
+    gap: 5px;
+}
+
+.contanier .campo-img .img-circula{
+    
+    
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-radius: 100%;
+    
+}
