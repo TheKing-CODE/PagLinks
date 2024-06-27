@@ -16,6 +16,10 @@ body{
 
 .contanier{
     display: grid;
+    grid-template-rows: 103px 24px 42px;
+    grid-template-columns: auto;
+    justify-content: center;  
+    gap: 10px;
     width: 500px;
     height: 500px;
     border-style: solid;
@@ -24,18 +28,34 @@ body{
     background-color: #dad6ca;
 }
 
-.contanier{
-    display: grid;
-    justify-content: center;        
-    gap: 5px;
+.contanier .campo-img{
+        position: relative; 
+        left: 50%;   
+        transform: translate(-50%);
+    border-style: solid;
+    width: 103px;
+    height: 103px;
 }
 
-.contanier .campo-img .img-circula{
-    
-    
+.contanier .campo-img .img-circula{    
     width: 100px;
     height: 100px;
     border-style: solid;
-    border-radius: 100%;
-    
+    border-radius: 100%;    
 }
+
+.contanier .campo-nome{
+    border-style: solid;
+    height: 24px;
+}
+
+.contanier .campo-descricao{
+ /*   position: relative;
+    top: -50px;*/
+    border-style: solid;    
+    height: 42px;
+    margin: 0px;
+
+}
+
+.contanier .campo-descricao p
