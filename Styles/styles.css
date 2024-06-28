@@ -12,6 +12,15 @@ body{
     align-items: center;    
     background: url('/img/fundo.gif') no-repeat center center fixed;    
     background-size: cover;
+    background: rgb(2,121,122);
+    background: linear-gradient(27deg, rgba(2,121,122,1) 0%, rgba(193,134,8,1) 100%);       
+}
+
+
+
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .pacifico-regular {
@@ -67,15 +76,15 @@ body{
 }
 
 .contanier .campo-link{      
-
     display: grid;
+    height: 154px;    
     grid-auto-rows: 1fr;
     gap: 10px;
 }
 
 .contanier .campo-link .link1, .link2, .link3{
     position: relative; 
-    left: 50%;       
+    left: 50%;     
     transform: translate(-50%);
     font-family: "Pacifico", cursive;
     font-weight: 400;
@@ -88,7 +97,7 @@ body{
     border-width: 1px;
     border-radius: 4%;
     text-align: center;
-    width: 55%;       
+    width: 50%;
     background-color: #1bb0ce;       
 }
 
@@ -104,17 +113,102 @@ body{
     font-size: 26px;
 }
 
-.contanier .campo-github .icon-git{    
+.contanier .campo-github{
     
-    font-size: 23px;
+    position: relative;
+    top: -120%;
+    /*display: grid;
+    justify-content: center;*/
     text-align: center;
+}
+
+.contanier .campo-github .icon-git, .icon-insta, .icon-linkedin{    
+    display: inline-block;
+    font-size: 26px;
     width: 30px;
-    position: relative; 
-    left: 50%;       
-    transform: translate(-50%);
+/*    position: relative;
+    left: 50%;
+    transform: translate(-30%);*/
 }
 
 .contanier .campo-github .icon-git:hover{
-    font-size: 25px;
-    
+    font-size: 25px;    
 }
+
+.contanier .campo-github .icon-insta:hover{
+    font-size: 25px;    
+}
+
+.contanier .campo-github .icon-linkedin:hover{
+    font-size: 25px;    
+}
+
+@media screen and (max-width: 414px){
+    .contanier{
+        display: grid;
+        grid-template-rows: auto;
+        width: 100%;
+        height: 100vh;
+        border-radius: 0%;
+        border-bottom-style: none;
+        border-top: none;
+        background: rgb(2,121,122);
+        background: linear-gradient(27deg, rgba(2,121,122,1) 0%, rgba(193,134,8,1) 100%);       
+    }
+
+    .contanier .campo-img{        
+        display: grid;
+        grid-template-rows: auto;
+        min-width: 160px;
+        min-height: 160px;
+        justify-content: center;
+        position: relative;
+        top: 50%;           
+    }
+
+    .contanier .campo-img .img-circula{
+        min-width: 150px;
+        min-height: 150px;
+        box-shadow: 0px 0px 50px;                 
+    }
+
+    .contanier .campo-nome{        
+        color: #fffafa;
+        position: relative;
+
+        top: 100%;
+    }
+
+    .contanier .campo-descricao{        
+        color: #fffafa;
+        position: relative;
+        top: 30%;
+    }
+
+    .contanier .campo-link{        
+        position: relative;
+        top: 5%;
+    }
+
+    .contanier .campo-link .link1, .link2, .link3{
+        background-color: white;
+        width: 90%;        
+        border-radius: 5%;
+    }
+
+    .contanier .campo-github .icon-git, .icon-insta, .icon-linkedin{
+        position: relative;
+        left: -7%;
+        font-size: 45px;
+        margin-left: 45px;
+        box-sizing: border-box;
+    }
+
+    .contanier .campo-github{
+        position: relative;
+        top: -95%;
+    }
+
+    
+    
+} 
