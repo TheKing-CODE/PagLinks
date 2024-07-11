@@ -66,7 +66,7 @@ a{
 }
 
 .contanier .campo-descricao{
-    font-family: "Playwrite NG Modern", cursive;
+    /*font-family: "Playwrite NG Modern", cursive;*/
     font-optical-sizing: auto;
     
     font-style: normal;
