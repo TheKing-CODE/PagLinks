@@ -1,40 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles/styles.css">
-    <script src="https://kit.fontawesome.com/f0ac6751a1.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <title>Pag de Links</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PagLink</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/f0ac6751a1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <section class="contanier">    
-        <div class="campo-img">
-            <img class="img-circula" src="img/person.png"></img>            
-        </div>
-        <div class="campo-nome">
-            <h1 style="text-align: center;">Allan Ch</h1>
-        </div>
-        <div class="campo-descricao">
-            <p style="text-align: center;">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
-        </div>
-        <div class="campo-link">
-            <div class="link1"><a href="https://portifolio-chi-ebon-68.vercel.app/">Portifólio</a></div>
-            <div class="link2"><a href="https://www.tabnews.com.br/AllanChristian">TabNew</a></div>
-            <div class="link3"><a href="https://google.com">Spotify</div>
-        </div>
-        <div class="campo-github">
-            <div class="icon-git"><a href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a></div>
-            <div class="icon-insta">
-               <a href="https://www.instagram.com/thecode.ltda/"> <i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <div class="icon-linkedin">
-                <a href="https://www.linkedin.com/in/christiandevallan/"><i class="fa-brands fa-linkedin"></i></a>  
-            </div>
-        </div>
-    </section>    
+	<div class="principal-1" id="principal-1">
+		<figure class="img-principal1">
+			<img src="img/person.png" class="img" id="img"></img>
+		</figure>
+		<section class="buttons">
+			<button class="criarPag" id="criarPag">Criar Nova Pág</button>
+			<button class="pagProntas" id="pagProntas">Páginas Pré-Prontas</button>
+		</section>	
+		<section class="links-autor">
+			<ul>
+				<li class="icon-linkedin" id="icon-linkedin">
+					<a href="https://www.linkedin.com/in/christiandevallan/"><i class="fa-brands fa-linkedin"></i></a>
+				</li>
+				<li class="icon-github" id="icon-github">
+					<a href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
+				</li>
+			</ul>
+		</section>	
+	</div>	
+
+
+	<div class="fundo-form" style="display: none;" id="fundo-form">
+		<div class="form" id="form" style="">
+			<form action="processa_formulario.php" method="post" enctype="multipart/form-data">
+				<span class="titulo-form" >CRIAR NOVA PAG DE LINK</span> 
+				<label for="img-form" style="text-align: left;">Imagem <input type="file" class="img-form" id="img-form"/></label><br/>
+				<label for="nome-form">Nome:<br/>  
+				<input type="text" class="nome-form" id="nome-form"/>
+				</label><br/>
+				<label for="descricao-form">Descrição:<br/>
+				<textarea class="descricao-form" id="descricao-form"></textarea>
+				</label><br/>
+				<label for="color-form">Color Fundo(HEX):<br/>
+				<input type="text" class="color-form" id="color-form"/>
+				</label><br/>
+				
+				<div class="buttons" id="button1">
+
+					<label for="name-button1">Nome Button:<br/>
+						<input class="nome-button1" id="name-button1" type="text">	
+					</label><br/>
+					<label for="link-button1">Link Button:<br/>
+						<input type="text" class="link-button1"><br/>
+					</label>
+				</div>
+				<br/>
+				<div class="buttons" id="button2">
+					<label for="name-button2">Nome Button:<br/>
+						<input class="nome-button1" id="name-button2" type="text">	
+					</label><br/>
+					<label for="link-button2">Link Button:<br/>
+						<input type="text" class="link-button2"><br/>
+					</label>
+				</div>	
+				<br/>
+				<div class="buttons" id="button3">
+					<label for="name-button3">Nome Button:<br/>
+						<input class="nome-button1" id="name-button3" type="text">	
+					</label><br/>
+					<label for="link-button1">Link Button:<br/>
+						<input type="text" class="link-button1"><br/>
+					</label>
+				</div>
+				<br/>
+
+				<input type="submit" value="Enviar"/>			
+			</form>	
+			<button class="limpaForm">Limpa Formulários</button>
+			<br/>
+				<br/>		
+		</div>
+	</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>
+
+<!-- 
+fundo
+foto
+Nome
+Descrição
+3 buttons 
+3 icon 
+
+https://paletadecores.com/paleta/723e4e/b03851/ef3353/f17144/f4b036/ -->
