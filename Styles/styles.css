@@ -1,214 +1,202 @@
 *{
-    margin: 0;
-    padding: 0;    
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    background: url('/img/fundo.gif') no-repeat center center fixed;    
-    background-size: cover;
-    background: rgb(2,121,122);
-    background: linear-gradient(27deg, rgba(2,121,122,1) 0%, rgba(193,134,8,1) 100%);       
+
+	display: flex;
+	flex-direction: column;
+}
+
+.principal-1{
+	height: 100vh;
+	width: 100%;
+	background-color: #723e4e;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	gap: 10px;
 }
 
 
-
-a{
-    text-decoration: none;
-    color: inherit;
+.principal-1 .img-principal1{
+	border-style: solid;
+	max-width: 250px;		
+	margin: auto;
 }
 
-.pacifico-regular {
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    font-style: normal;
+.principal-1 .img-principal1 > img{
+	width: 100%;	
+	height: 250px;
+	max-height: 100%;
+
 }
 
-.contanier{
-    display: grid;
-    grid-template-rows: 103px 24px 42px 195px 1fr;
-    grid-template-columns: auto;    
-    gap: 20px;
-    width: 500px;
-    height: 500px;
-    border-style: solid;
-    border-radius: 3%;
-    border-color: #1bb0ce;
-    background-color: #dad6ca;
+.principal-1 .buttons{
+	display: inline-block;
 }
 
-.contanier .campo-img{
-    position: relative; 
-    left: 50%;   
-    transform: translate(-50%);
+.principal-1 .links-autor ul {
+	text-align: center;
+	margin-top: 15px;
+}
+
+.principal-1 .links-autor ul li{
+	text-decoration: none;
+	list-style: none;
+	display: inline-block;
+
+}
+
+.principal-1 .links-autor ul li a{
+	color: #f17144;
+	font-size: 30px;
+	margin: 2px;
+}
+
+.principal-1 .links-autor ul li a:hover{
+	font-size: 26px;
+}
+
+.principal-1 .buttons{	
+	display: grid;
+	width: 350px;
+	max-width: 500px;
+	justify-items: center;
+}
+
+.principal-1 .buttons > button{
+    background-color: #ef3353; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remover sublinhado */
+    display: inline-block; /* Exibir como um bloco */
+    font-size: 18px; /* Tamanho da fonte */
+    width: 65%;
     
-    width: 103px;
-    height: 103px;
+    cursor: pointer; /* Cursor ao passar */
+    border-radius: 20px; /* Raio da borda para arredondar */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+    box-shadow: 0px 0px 0px 2px;
+    margin: auto 4px;
+    margin-top: 10px;
 }
 
-.contanier .campo-img .img-circula{    
-    width: 110px;
-    height: 110px;
-    margin-top: 6px;
-    border-style: double;
-    border-radius: 100%;    
-    border-color: #1bb0ce;
+.principal-1 .buttons > button:hover{
+	background-color: rgba(227, 104, 54, 1)
 }
 
-.contanier .campo-nome{    
-    margin-top: 6px;
-    height: 24px;
+.fundo-form{
+	background-color: #723e4e;
+	height: auto;
+	
+	width: 100%;
+	margin: auto;
 }
 
-.contanier .campo-descricao{
-    font-family: "Playwrite NG Modern", cursive;
-    font-optical-sizing: auto;
+.form form .titulo-form{
+	font-size: 30px;
+	text-align: center;
+	
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 25px;
+	color: white;
+}
+
+.form{
+	height: auto;
+	/*width: 600px;*/
+	max-width: 600px;
+	margin: auto;
+	border-style: solid;
+	background-color: #b03851;
+}
+
+.form form{
+	display: grid;
+
+}
+
+.form form label{
+	text-align: center;
+	color: white;
+	font-size: 22px;
+}
+
+.form form input{
+	width: 90%;
+	height: 32px;
+	padding-left: 15px
+}
+
+
+
+.form form textarea{
+	width: 90%;
+	height: 50px;
+	padding-top: 10px;
+	padding-left: 15px
+}
+
+
+.form form .buttons{
+	text-align: center;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #f4b036;
+	padding: 10px;
+}
+
+.form form .buttons input{
+	margin-bottom: 10px;
+}
+
+.form form input[type="submit"] {
+	background-color: #f17144; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remover sublinhado */
+    display: inline-block; /* Exibir como um bloco */
+    font-size: 18px; /* Tamanho da fonte */
+    width: 98%;
     
-    font-style: normal;
+    cursor: pointer; /* Cursor ao passar */
+    border-radius: 20px; /* Raio da borda para arredondar */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+    box-shadow: 0px 0px 0px 2px;
+    margin: auto 4px;
+    margin-top: 10px;		
 
-    height: 50px;
-    margin: 0px;
-}
-
-.contanier .campo-link{      
-    display: grid;
-    height: 154px;    
-    grid-auto-rows: 1fr;
-    gap: 10px;
-}
-
-.contanier .campo-link .link1, .link2, .link3{
-    position: relative; 
-    left: 50%;     
-    transform: translate(-50%);
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 4%;
     text-align: center;
-    width: 50%;
-    background-color: #1bb0ce;       
+    height: auto;
 }
 
-.contanier .campo-link .link1:hover{
-    font-size: 26px;
-}
 
-.contanier .campo-link .link2:hover{
-    font-size: 26px;
-}
-
-.contanier .campo-link .link3:hover{
-    font-size: 26px;
-}
-
-.contanier .campo-github{
+.form > button{
+	background-color: #ef3353; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remover sublinhado */
+    display: inline-block; /* Exibir como um bloco */
+    font-size: 18px; /* Tamanho da fonte */
+    width: 98%;
     
-    position: relative;
-    top: -120%;
-    /*display: grid;
-    justify-content: center;*/
+    cursor: pointer; /* Cursor ao passar */
+    border-radius: 20px; /* Raio da borda para arredondar */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+    box-shadow: 0px 0px 0px 2px;
+    margin: auto 4px;
+    margin-top: 10px;
+
     text-align: center;
+    height: auto;	
 }
-
-.contanier .campo-github .icon-git, .icon-insta, .icon-linkedin{    
-    display: inline-block;
-    font-size: 26px;
-    width: 30px;
-/*    position: relative;
-    left: 50%;
-    transform: translate(-30%);*/
-}
-
-.contanier .campo-github .icon-git:hover{
-    font-size: 25px;    
-}
-
-.contanier .campo-github .icon-insta:hover{
-    font-size: 25px;    
-}
-
-.contanier .campo-github .icon-linkedin:hover{
-    font-size: 25px;    
-}
-
-@media screen and (max-width: 414px){
-    .contanier{
-        display: grid;
-        grid-template-rows: auto;
-        width: 100%;
-        height: 100vh;
-        border-radius: 0%;
-        border-bottom-style: none;
-        border-top: none;
-        background: rgb(2,121,122);
-        background: linear-gradient(27deg, rgba(2,121,122,1) 0%, rgba(193,134,8,1) 100%);       
-    }
-
-    .contanier .campo-img{        
-        display: grid;
-        grid-template-rows: auto;
-        min-width: 160px;
-        min-height: 160px;
-        justify-content: center;
-        position: relative;
-        top: 50%;           
-    }
-
-    .contanier .campo-img .img-circula{
-        min-width: 150px;
-        min-height: 150px;
-        box-shadow: 0px 0px 50px;                 
-    }
-
-    .contanier .campo-nome{        
-        color: #fffafa;
-        position: relative;
-
-        top: 100%;
-    }
-
-    .contanier .campo-descricao{        
-        color: #fffafa;
-        position: relative;
-        top: 30%;
-    }
-
-    .contanier .campo-link{        
-        position: relative;
-        top: 5%;
-    }
-
-    .contanier .campo-link .link1, .link2, .link3{
-        background-color: white;
-        width: 90%;        
-        border-radius: 5%;
-    }
-
-    .contanier .campo-github .icon-git, .icon-insta, .icon-linkedin{
-        position: relative;
-        left: -7%;
-        font-size: 45px;
-        margin-left: 45px;
-        box-sizing: border-box;
-    }
-
-    .contanier .campo-github{
-        position: relative;
-        top: -95%;
-    }
-
-    
-    
-} 
