@@ -1,0 +1,6 @@
+
+  Criar uma hash
+   Criar um diretório  
+    Criar um arquivo 
+     Salvar a img 
+      

@@ -31,50 +31,50 @@
 
 	<div class="fundo-form" style="display: none;" id="fundo-form">
 		<div class="form" id="form" style="">
-			<form action="processa_formulario.php" method="post" enctype="multipart/form-data" id="formulario">
-				<span class="titulo-form">CRIAR NOVA PAG DE LINK</span> 
-				<label for="img-form" style="text-align: left; margin-left: 15px;">Imagem <input type="file" class="img-form" id="img-form"/></label><br/>
-				<label for="nome-form">Nome:<br/>  
-				<input type="text" class="nome-form" id="nome-form"/>
-				</label><br/>
-				<label for="descricao-form">Descrição:<br/>
-				<textarea class="descricao-form" id="descricao-form"></textarea>
-				</label><br/>
-				<label for="color-form">Color Fundo(HEX):<br/>
-				<input type="text" class="color-form" id="color-form"/>
-				</label><br/>
-				
-				<div class="buttons" id="button1">
+		<form action="processa_dados.php" method="post" enctype="multipart/form-data" id="formulario">
+		    <span class="titulo-form">CRIAR NOVA PÁGINA DE LINK</span> 
+		    <label for="img-form" style="text-align: left; margin-left: 15px;">Imagem <input type="file" name="img-form" id="img-form"/></label><br/>
+		    <label for="nome-form">Nome:<br/>  
+		    <input type="text" name="nome-form" id="nome-form"/>
+		    </label><br/>
+		    <label for="descricao-form">Descrição:<br/>
+		    <textarea name="descricao-form" id="descricao-form"></textarea>
+		    </label><br/>
+		    <label for="color-form">Cor de Fundo (HEX):<br/>
+		    <input type="text" name="color-form" id="color-form"/>
+		    </label><br/>
+		    
+		    <div class="buttons" id="button1">
+		        <label for="name-button1">Nome Button:<br/>
+		            <input type="text" name="name-button1" id="name-button1">    
+		        </label><br/>
+		        <label for="link-button1">Link Button:<br/>
+		            <input type="text" name="link-button1" id="link-button1"><br/>
+		        </label>
+		    </div>
+		    <br/>
+		    <div class="buttons" id="button2">
+		        <label for="name-button2">Nome Button:<br/>
+		            <input type="text" name="name-button2" id="name-button2">    
+		        </label><br/>
+		        <label for="link-button2">Link Button:<br/>
+		            <input type="text" name="link-button2" id="link-button2"><br/>
+		        </label>
+		    </div>  
+		    <br/>
+		    <div class="buttons" id="button3">
+		        <label for="name-button3">Nome Button:<br/>
+		            <input type="text" name="name-button3" id="name-button3">    
+		        </label><br/>
+		        <label for="link-button3">Link Button:<br/>
+		            <input type="text" name="link-button3" id="link-button3"><br/>
+		        </label>
+		    </div>
+		    <br/>
 
-					<label for="name-button1">Nome Button:<br/>
-						<input class="nome-button1" id="name-button1" type="text">	
-					</label><br/>
-					<label for="link-button1">Link Button:<br/>
-						<input type="text" class="link-button1"><br/>
-					</label>
-				</div>
-				<br/>
-				<div class="buttons" id="button2">
-					<label for="name-button2">Nome Button:<br/>
-						<input class="nome-button1" id="name-button2" type="text">	
-					</label><br/>
-					<label for="link-button2">Link Button:<br/>
-						<input type="text" class="link-button2"><br/>
-					</label>
-				</div>	
-				<br/>
-				<div class="buttons" id="button3">
-					<label for="name-button3">Nome Button:<br/>
-						<input class="nome-button1" id="name-button3" type="text">	
-					</label><br/>
-					<label for="link-button1">Link Button:<br/>
-						<input type="text" class="link-button1"><br/>
-					</label>
-				</div>
-				<br/>
+		    <input type="submit" value="Enviar"/>            
+		</form>
 
-				<input type="submit" value="Enviar"/>			
-			</form>	
 			<button class="limpaForm" id="limpaForm">Limpa Formulários</button>
 			<br/>
 			<br/>		
