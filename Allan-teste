@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pág Modelo</title>	
+    <script src="https://kit.fontawesome.com/f0ac6751a1.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.contanie{
+		display: grid;
+		height: 100vh;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+		gap: 5px;
+		background-color: #723e4e;
+	}
+
+	.contanie figure .img{
+		border-radius: 100%;
+		border-style: solid;
+		border-width: 4px;
+		width: 220px;
+		height: 220px;
+		max-width: 100%;
+	}
+
+	.contanie p{
+		max-width: 420px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+
+	.contanie .buttons{
+		display: inline-grid;
+		gap: 10px;
+		
+		height: auto;
+	}
+
+	.contanie .buttons button{
+		background-color: #ef3353; /* Cor de fundo */
+	    color: white; /* Cor do texto */
+	    border: none; /* Remover borda */
+	    padding: 10px 20px; /* Espaçamento interno */
+	    text-align: center; /* Alinhamento do texto */
+	    text-decoration: none; /* Remover sublinhado */
+	    display: inline-block; /* Exibir como um bloco */
+	    font-size: 18px; /* Tamanho da fonte */
+	    width: 98%;
+	    
+	    cursor: pointer; /* Cursor ao passar */
+	    border-radius: 20px; /* Raio da borda para arredondar */
+	    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+	    box-shadow: 0px 0px 0px 2px;
+	    margin: auto 4px;
+	    margin-top: 10px;
+	}
+
+	.contanie .icons {
+		margin-top: 10px;
+	}
+
+	.contanie .icons a{
+		text-decoration: none;
+		color: black;
+		font-size: 40px;
+		margin-left: 10px;
+		box-sizing: border-box;
+	}
+
+</style>	
+
+<body>
+	<main>
+		<div class="contanie" id="contanie">
+			<figure class="area-img" id="area-img">
+				<img src="person.png" class="img" id="img"></img>			
+			</figure>
+			<h1 class="nome" id="nome">Allan Christian</h1>
+			<p class="descricao" id="descricao">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,lore
+			</p>
+			<section class="buttons" id="buttons">
+				<button class="button-1" id="button-1">
+					<a class="link1" id="link1">Button1</a>
+				</button>
+				<button class="button-2" id="button-2">
+					<a class="link2" id="link2">Button2</a>
+				</button>
+				<button class="button-3" id="button-3">
+					<a class="link3" id="link3">Button3</a>
+				</button>
+			</section>
+			<section class="icons" id="icons">
+				<a class="icon-link1" id="icon-link1" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
+				<a class="icon-link2" id="icon-link2" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
+				<a class="icon-link3" id="icon-link3" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
+			</section>			
+		</div>
+	</main>
+</body>
+
+</html>
