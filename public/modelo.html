@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pág Modelo</title>	
     <script src="https://kit.fontawesome.com/f0ac6751a1.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <style>
@@ -107,6 +108,47 @@
 			</section>			
 		</div>
 	</main>
+
+	<script>
+        // Função para extrair e exibir os dados recebidos da URL
+        function exibirDados() {
+            // Obtém a string de parâmetros da URL
+            const params = new URLSearchParams(window.location.search);
+            
+            // Verifica se o parâmetro 'dados' está presente na URL
+            if (params.has('dados')) {
+                // Obtém o valor do parâmetro 'dados' (que é um JSON)
+                const dadosJson =  decodeURIComponent(params.get('dados'));
+                
+                // Converte o JSON para um objeto JavaScript
+                const dados = JSON.parse(dadosJson);
+                
+           /*     // Exibe os dados na página
+                document.getElementById('nome').textContent = dados.nome;
+                document.getElementById('descricao').textContent = dados.descricao;
+                document.getElementById('corFundo').textContent = dados.corFundo;
+
+                document.getElementById('button1Nome').textContent = dados.button1.nome;
+                document.getElementById('button1Link').textContent = dados.button1.link;
+
+                document.getElementById('button2Nome').textContent = dados.button2.nome;
+                document.getElementById('button2Link').textContent = dados.button2.link;
+
+                document.getElementById('button3Nome').textContent = dados.button3.nome;
+                document.getElementById('button3Link').textContent = dados.button3.link;*/
+            } else {
+                // Caso o parâmetro 'dados' não esteja presente na URL
+                document.getElementById('dadosRecebidos').innerHTML = `
+                    <p>Nenhum dado recebido.</p>
+                `;
+            }
+        }
+
+        // Chama a função para exibir os dados quando a página carregar
+        window.onload = exibirDados;
+    </script>
+
+
 </body>
 
 </html>
