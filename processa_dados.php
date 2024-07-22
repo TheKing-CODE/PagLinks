@@ -9,6 +9,7 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
         $nome_Diretorio = 'public/'.$nome;
         mkdir($nome_Diretorio); 
 
+        $nomeArquivo = "teste";
         // Aqui você pode adicionar código para manipular o arquivo enviado (imagem)
         if ($_FILES['img-form']['error'] === UPLOAD_ERR_OK) {
             $nomeArquivo = $_FILES['img-form']['name'];
@@ -17,28 +18,30 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
         };
        
 
-       //
-        $dados_formulario = array(
-            'nome' => $_POST['nome-form'],
-            'descricao' => $_POST['descricao-form'],
-            'corFundo' => $_POST['color-form'],
-            'button1' => array(
-                'nome' => $_POST['name-button1'],
-                'link' => $_POST['link-button1']
-            ),
-            'button2' => array(
-                'nome' => $_POST['name-button2'],
-                'link' => $_POST['link-button2']
-            ),
-            'button3' => array(
-                'nome' => $_POST['name-button3'],
-                'link' => $_POST['link-button3']
-            )
-        );
+        // Coleta dos dados do formulário
+       $dados_formulario = array(
+        'nome' => $_POST['nome-form'],
+        'nomeImg' => $nomeArquivo,
+        'descricao' => $_POST['descricao-form'],
+        'corFundo' => $_POST['color-form'],
+        'button1' => array(
+            'nome' => $_POST['name-button1'],
+            'link' => $_POST['link-button1']
+        ),
+        'button2' => array(
+            'nome' => $_POST['name-button2'],
+            'link' => $_POST['link-button2']
+        ),
+        'button3' => array(
+            'nome' => $_POST['name-button3'],
+            'link' => $_POST['link-button3']
+        )
+    );    
+      
 
         //Copia o arquivo modelo.html
         $pagHtmlModelo = file_get_contents("public/modelo.html"); // Lê o conteúdo do arquivo
-        //file_put_contents("example.txt", "Hello, world!");
+
         touch("public/$nome/$nome".'.html');
         file_put_contents("public/$nome/$nome".'.html', $pagHtmlModelo);
 
@@ -52,8 +55,24 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
 }
 
 function principal(){
-    recebe_dados();
+    enviarDados(recebe_dados());
 };
+
+
+function enviarDados($dados){
+    $dados = recebe_dados();
+
+    // Define o cabeçalho Content-Type como JSON
+    header('Content-Type: application/json');   
+
+    $dadosJson = json_encode($dados);
+
+    // Redireciona para a página teste.html após um pequeno delay (opcional)
+    $url = "http://localhost/public/" . $dados['nome'] . "/" . $dados['nome'] . ".html";
+
+    header("Location: $url?dados=$dadosJson");
+
+}
 
 principal();
 
