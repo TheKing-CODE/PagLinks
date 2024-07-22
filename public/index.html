@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PagLink</title>
+	<link rel="stylesheet" href="Styles/styles.css">
+	<script src="https://kit.fontawesome.com/f0ac6751a1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="principal-1" id="principal-1">
+		<figure class="img-principal1">
+			<img src="img/person.png" class="img" id="img"></img>
+		</figure>
+		<section class="buttons">
+			<button class="criarPag" id="criarPag">Criar Nova Pág</button>
+			<button class="pagProntas" id="pagProntas">Páginas Pré-Prontas</button>
+		</section>	
+		<section class="links-autor">
+			<ul>
+				<li class="icon-linkedin" id="icon-linkedin">
+					<a href="https://www.linkedin.com/in/christiandevallan/"><i class="fa-brands fa-linkedin"></i></a>
+				</li>
+				<li class="icon-github" id="icon-github">
+					<a href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
+				</li>
+			</ul>
+		</section>	
+	</div>	
+
+
+	<div class="fundo-form" style="display: none;" id="fundo-form">
+		<div class="form" id="form" style="">
+		<form action="processa_dados.php" method="post" enctype="multipart/form-data" id="formulario">
+		    <span class="titulo-form">CRIAR NOVA PÁGINA DE LINK</span> 
+		    <label for="img-form" style="text-align: left; margin-left: 15px;">Imagem <input type="file" name="img-form" id="img-form"/></label><br/>
+		    <label for="nome-form">Nome:<br/>  
+		    <input type="text" name="nome-form" id="nome-form"/>
+		    </label><br/>
+		    <label for="descricao-form">Descrição:<br/>
+		    <textarea name="descricao-form" id="descricao-form"></textarea>
+		    </label><br/>
+		    <label for="color-form">Cor de Fundo (HEX):<br/>
+		    <input type="text" name="color-form" id="color-form"/>
+		    </label><br/>
+		    
+		    <div class="buttons" id="button1">
+		        <label for="name-button1">Nome Button:<br/>
+		            <input type="text" name="name-button1" id="name-button1">    
+		        </label><br/>
+		        <label for="link-button1">Link Button:<br/>
+		            <input type="text" name="link-button1" id="link-button1"><br/>
+		        </label>
+		    </div>
+		    <br/>
+		    <div class="buttons" id="button2">
+		        <label for="name-button2">Nome Button:<br/>
+		            <input type="text" name="name-button2" id="name-button2">    
+		        </label><br/>
+		        <label for="link-button2">Link Button:<br/>
+		            <input type="text" name="link-button2" id="link-button2"><br/>
+		        </label>
+		    </div>  
+		    <br/>
+		    <div class="buttons" id="button3">
+		        <label for="name-button3">Nome Button:<br/>
+		            <input type="text" name="name-button3" id="name-button3">    
+		        </label><br/>
+		        <label for="link-button3">Link Button:<br/>
+		            <input type="text" name="link-button3" id="link-button3"><br/>
+		        </label>
+		    </div>
+		    <br/>
+
+		    <input type="submit" value="Enviar"/>            
+		</form>
+
+			<button class="limpaForm" id="limpaForm">Limpa Formulários</button>
+			<br/>
+			<br/>		
+		</div>
+	</div>
+
+
+<script src="scripts/jquery-3.7.1.min.js"></script>
+<script src="scripts/scripts.js"></script>
+
+</body>
+</html>
+
+<!-- 
+fundo
+foto
+Nome
+Descrição
+3 buttons 
+3 icon 
+
+https://paletadecores.com/paleta/723e4e/b03851/ef3353/f17144/f4b036/ -->
