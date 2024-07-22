@@ -55,8 +55,8 @@
 	    text-align: center; /* Alinhamento do texto */
 	    text-decoration: none; /* Remover sublinhado */
 	    display: inline-block; /* Exibir como um bloco */
-	    font-size: 18px; /* Tamanho da fonte */
-	    width: 98%;
+	    font-size: 18px; /* Tamanho da fonte */	    	
+	    max-width: 98%;
 	    
 	    cursor: pointer; /* Cursor ao passar */
 	    border-radius: 20px; /* Raio da borda para arredondar */
@@ -64,6 +64,10 @@
 	    box-shadow: 0px 0px 0px 2px;
 	    margin: auto 4px;
 	    margin-top: 10px;
+	}
+
+	.contanie .buttons button:hover{
+		background-color: #ef4060; /* Cor de fundo */
 	}
 
 	.contanie .icons {
@@ -74,6 +78,14 @@
 		text-decoration: none;
 		color: black;
 		font-size: 40px;
+		margin-left: 10px;
+		box-sizing: border-box;
+	}
+
+	.contanie .icons a:hover{
+		text-decoration: none;
+		color: black;
+		font-size: 42px;
 		margin-left: 10px;
 		box-sizing: border-box;
 	}
@@ -102,12 +114,13 @@
 				</button>
 			</section>
 			<section class="icons" id="icons">
-				<a class="icon-link1" id="icon-link1" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
-				<a class="icon-link2" id="icon-link2" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
+				<a class="icon-link1" id="icon-link1" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-instagram"></i></a>
+				<a class="icon-link2" id="icon-link2" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-linkedin"></i></a>
 				<a class="icon-link3" id="icon-link3" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
 			</section>			
 		</div>
 	</main>
+
 
 	<script>
         // Função para extrair e exibir os dados recebidos da URL
@@ -123,19 +136,7 @@
                 // Converte o JSON para um objeto JavaScript
                 const dados = JSON.parse(dadosJson);
                 
-           /*     // Exibe os dados na página
-                document.getElementById('nome').textContent = dados.nome;
-                document.getElementById('descricao').textContent = dados.descricao;
-                document.getElementById('corFundo').textContent = dados.corFundo;
-
-                document.getElementById('button1Nome').textContent = dados.button1.nome;
-                document.getElementById('button1Link').textContent = dados.button1.link;
-
-                document.getElementById('button2Nome').textContent = dados.button2.nome;
-                document.getElementById('button2Link').textContent = dados.button2.link;
-
-                document.getElementById('button3Nome').textContent = dados.button3.nome;
-                document.getElementById('button3Link').textContent = dados.button3.link;*/
+                return dados;
             } else {
                 // Caso o parâmetro 'dados' não esteja presente na URL
                 document.getElementById('dadosRecebidos').innerHTML = `
@@ -144,10 +145,34 @@
             }
         }
 
-        // Chama a função para exibir os dados quando a página carregar
-        window.onload = exibirDados;
-    </script>
+        function preencherDados(dados){        	
+        /*	$('#img').attr("src", dados.nomeImg);*/
+        	$('#nome').text(dados.nome);
+        	$('#descricao').text(dados.descricao);
+        	$('#contanie').css("background-color", "#"+dados.corFundo); //background-color: #723e4e;        	
+        	
+        	var button_1 = $("#button-1").find("a");
+        	button_1.text(dados.button1.nome)
+        	button_1.attr("href",dados.button1.link);
+        	button_1.css("color","white").css("text-decoration","none"); //text-decoration: none;        	
 
+        	var button_2 = $("#button-2").find("a");
+        	button_2.text(dados.button2.nome)
+        	button_2.attr("href",dados.button2.link);
+        	button_2.css("color","white").css("text-decoration","none").css("width", ""); //text-decoration: none; width: 98%;
+
+        	var button_3 = $("#button-3").find("a");
+        	button_3.text(dados.button3.nome)
+        	button_3.attr("href",dados.button3.link);
+        	button_3.css("color","white").css("text-decoration","none"); //text-decoration: none;
+        }
+
+        // Chama a função para exibir os dados quando a página carregar
+        $(function(){
+        	var dados = exibirDados();
+        	preencherDados(dados);
+        })
+    </script>
 
 </body>
 
