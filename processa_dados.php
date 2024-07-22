@@ -13,7 +13,7 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
         if ($_FILES['img-form']['error'] === UPLOAD_ERR_OK) {
             $nomeArquivo = $_FILES['img-form']['name'];
             move_uploaded_file($_FILES['img-form']['tmp_name'], "./public/$nome/$nomeArquivo");
-            echo "<p>Imagem enviada com sucesso: $nomeArquivo</p>";
+            //echo "<p>Imagem enviada com sucesso: $nomeArquivo</p>";
         };
        
 
@@ -38,8 +38,9 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
 
         //Copia o arquivo modelo.html
         $pagHtmlModelo = file_get_contents("public/modelo.html"); // Lê o conteúdo do arquivo
-        file_put_contents('public/'.$nome, $pagHtmlModelo);
-
+        //file_put_contents("example.txt", "Hello, world!");
+        touch("public/$nome/$nome".'.html');
+        file_put_contents("public/$nome/$nome".'.html', $pagHtmlModelo);
 
         echo "Nome do diretorio: ".$nome_Diretorio;
         return $dados_formulario;
@@ -51,7 +52,7 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
 }
 
 function principal(){
-    var_dump(recebe_dados());
+    recebe_dados();
 };
 
 principal();
