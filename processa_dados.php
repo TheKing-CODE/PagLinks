@@ -1,7 +1,4 @@
 <?php
-
-
-
 function recebe_dados($nome_Diretorio_Img = '/public/'){
     // Verifica se os dados foram enviados pelo formulário
     if ($_SERVER["REQUEST_METHOD"] == "POST") {    
@@ -11,7 +8,7 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
         $nome_Diretorio = 'public/'.$nome;
         mkdir($nome_Diretorio); 
 
-        $nomeArquivo = "teste";
+        
         // Aqui você pode adicionar código para manipular o arquivo enviado (imagem)
         if ($_FILES['img-form']['error'] === UPLOAD_ERR_OK) {
             $nomeArquivo = $_FILES['img-form']['name'];
@@ -26,6 +23,9 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
         'nomeImg' => $nomeArquivo,
         'descricao' => $_POST['descricao-form'],
         'corFundo' => $_POST['color-form'],
+        'linkInstagram' => $_POST['link-instagram'],
+        'linkLinkedin' => $_POST['link-linkedin'],
+        'linkGithub' => $_POST['link-github'],
         'button1' => array(
             'nome' => $_POST['name-button1'],
             'link' => $_POST['link-button1']
@@ -38,6 +38,7 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
             'nome' => $_POST['name-button3'],
             'link' => $_POST['link-button3']
         )
+
     );    
       
 
@@ -59,7 +60,7 @@ $dados_form = recebe_dados();
 
 
 function enviarDados($dados){
-    $dados = recebe_dados();
+    /*$dados = recebe_dados();*/
 
     // Define o cabeçalho Content-Type como JSON
     header('Content-Type: application/json');   
@@ -69,7 +70,7 @@ function enviarDados($dados){
     // Redireciona para a página teste.html após um pequeno delay (opcional)
     $url = "http://localhost/public/" . $dados['nome'] . "/" . $dados['nome'] . ".html";
 
-    /*header("Location: $url?dados=$dadosJson");*/
+    header("Location: $url?dados=$dadosJson");
 
 };
 
@@ -82,7 +83,7 @@ function addNomePagNoRegristo($nome){
 
 function principal(){
     $dados = recebe_dados();
-    addNomePagNoRegristo($dados['nome']);
+ /*   addNomePagNoRegristo($dados['nome']);*/
     enviarDados($dados);
 };
 
@@ -92,3 +93,5 @@ function principal(){
 principal();
 
 ?>
+
+
