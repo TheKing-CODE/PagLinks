@@ -6,14 +6,11 @@ $(function(){
     var Form = $('#form');
     
     CriarNvPag.click(function(){
-    Principal.css('pointer-events','none').css('position','fixed').css('opacity','0.1').css('z-index','1');
-    FundoForm.css('display','block');
+      Principal.css('pointer-events','none').css('position','fixed').css('opacity','0.1').css('z-index','1');
+      FundoForm.css('display','block');
     })
     
-    FundoForm.click(function(){
-    /* FundoForm.css('display','none');*/
-    })
-    })
+})
     
     $('#limpaForm').click(function(){
         limparFormulario();

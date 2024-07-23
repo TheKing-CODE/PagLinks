@@ -1,5 +1,7 @@
 <?php
 
+
+
 function recebe_dados($nome_Diretorio_Img = '/public/'){
     // Verifica se os dados foram enviados pelo formulário
     if ($_SERVER["REQUEST_METHOD"] == "POST") {    
@@ -45,18 +47,15 @@ function recebe_dados($nome_Diretorio_Img = '/public/'){
         touch("public/$nome/$nome".'.html');
         file_put_contents("public/$nome/$nome".'.html', $pagHtmlModelo);
 
-        echo "Nome do diretorio: ".$nome_Diretorio;
         return $dados_formulario;
 
     } else {
         // Caso não seja uma requisição POST, redireciona para página de erro ou outra página
         echo "<h2>Erro: Método de requisição inválido.</h2>";
     }
-}
-
-function principal(){
-    enviarDados(recebe_dados());
 };
+
+$dados_form = recebe_dados();
 
 
 function enviarDados($dados){
@@ -70,9 +69,25 @@ function enviarDados($dados){
     // Redireciona para a página teste.html após um pequeno delay (opcional)
     $url = "http://localhost/public/" . $dados['nome'] . "/" . $dados['nome'] . ".html";
 
-    header("Location: $url?dados=$dadosJson");
+    /*header("Location: $url?dados=$dadosJson");*/
 
+};
+
+function addNomePagNoRegristo($nome){
+    $arquivo = fopen("public/name_pages.txt", "a");
+    fwrite($arquivo, "\n $nome");
+    fclose($arquivo);
 }
+
+
+function principal(){
+    $dados = recebe_dados();
+    addNomePagNoRegristo($dados['nome']);
+    enviarDados($dados);
+};
+
+
+
 
 principal();
 
