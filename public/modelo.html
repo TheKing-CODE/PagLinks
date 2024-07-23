@@ -29,8 +29,8 @@
 		border-radius: 100%;
 		border-style: solid;
 		border-width: 4px;
-		width: 220px;
-		height: 220px;
+		width: 240px;
+		height: 240px;
 		max-width: 100%;
 	}
 
@@ -114,9 +114,9 @@
 				</button>
 			</section>
 			<section class="icons" id="icons">
-				<a class="icon-link1" id="icon-link1" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-instagram"></i></a>
-				<a class="icon-link2" id="icon-link2" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-linkedin"></i></a>
-				<a class="icon-link3" id="icon-link3" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
+				<a class="icon-link1" id="link-instagram" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-instagram"></i></a>
+				<a class="icon-link2" id="link-linkedin" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-linkedin"></i></a>
+				<a class="icon-link3" id="link-github" href="https://github.com/TheKing-CODE"><i class="fa-brands fa-github"></i></a>
 			</section>			
 		</div>
 	</main>
@@ -124,7 +124,7 @@
 
 	<script>
         // Função para extrair e exibir os dados recebidos da URL
-        function exibirDados() {
+        function extrairDados() {
             // Obtém a string de parâmetros da URL
             const params = new URLSearchParams(window.location.search);
             
@@ -145,12 +145,17 @@
             }
         }
 
-        function preencherDados(dados){        	
-        /*	$('#img').attr("src", dados.nomeImg);*/
+        function preencherDados(dados){     
+        	var img = $("#area-img").find("img");
+        	img.attr("src", dados.nomeImg);
+        	$('title').text(dados.nome);
         	$('#nome').text(dados.nome);
         	$('#descricao').text(dados.descricao);
         	$('#contanie').css("background-color", "#"+dados.corFundo); //background-color: #723e4e;        	
-        	
+        	$('#link-instagram').attr("href",dados.linkInstagram);
+        	$('#link-linkedin').attr("href",dados.linkLinkedin);
+        	$('#link-github').attr("href",dados.linkGithub);
+
         	var button_1 = $("#button-1").find("a");
         	button_1.text(dados.button1.nome)
         	button_1.attr("href",dados.button1.link);
@@ -169,7 +174,7 @@
 
         // Chama a função para exibir os dados quando a página carregar
         $(function(){
-        	var dados = exibirDados();
+        	var dados = extrairDados();
         	preencherDados(dados);
         })
     </script>
@@ -177,3 +182,4 @@
 </body>
 
 </html>
+
