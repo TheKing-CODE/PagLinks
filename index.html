@@ -14,7 +14,7 @@
 		</figure>
 		<section class="buttons">
 			<button class="criarPag" id="criarPag">Criar Nova Pág</button>
-			<button class="pagProntas" id="pagProntas">Páginas Pré-Prontas</button>
+			<button class="ComoFunciona" id="ComoFunciona">Como funciona?</button>
 		</section>	
 		<section class="links-autor">
 			<ul>
@@ -28,14 +28,42 @@
 		</section>	
 	</div>	
 
+	<div class="funcionamento" id="funcionamento" style="display: none;">
+		<h1 class="titulos">Como funciona?</h1>
+		<h2 class="titulos" style="margin-top:10px">Qual o objetivo?</h2>
+		<div class="scrool" id="objetivo">
+			<p>Desenvolvi essa pag com o intuito de ser semelhante ao "linktree". Aqui você consegue criar sua própria pag adicionando link's, imagem e descrição. Depois que sua pag é gerada, você poderá compartilha o link dela com amigos.
+			</p>
+		</div>	
+		<h2 class="titulos">Como fazer?</h2>
+		<div class="scrool" id="Como-fazer">
+			<p>Basta preencher o formulário colocando suas informações e links que deseja compartilha.<br/> 
+			   O formulário contém os seguintes dados que poderam ser preenchidos:<br/> 
+			   <ul>
+			   		<li>Imagem que será exibida na sua pag.</li>
+			   		<li>Breve Descrição.</li>
+			   		<li>3 Buttons que contêm um link.</li>
+			   		<li>3 Icons que contêm um link.</li>
+			   </ul>
+			</p>
+		</div>	
+		<h2 class="titulos">Lógica de Desenvolvimento</h2>
+		<div class="scrool" id="Logica-desenvolvimento">
+			<p>Quando é preenchido e enviado o formulário, os dados são enviado para o servidor que processa as informação e criar uma nova pag
+				como base no <a href="">Modelo exemplo</a>. Pós isso o servidor envia os dados via Json pela URL para a pag que foi criada.
+				Essa nova pag processa esses dados e preenche os buttons, icons e img com os dados fornecidos. 	
+			</p>
+		</div>	
+	</div>	
+
 
 	<div class="fundo-form" style="display: none;" id="fundo-form">
 		<div class="form" id="form" style="">
 		<form action="processa_dados.php" method="post" enctype="multipart/form-data" id="formulario">
 		    <span class="titulo-form">CRIAR NOVA PÁGINA DE LINK</span> 
-		    <label for="img-form" style="text-align: left; margin-left: 15px;">Imagem <input type="file" name="img-form" id="img-form"/></label><br/>
+		    <label for="img-form" style="text-align: left; margin-left: 15px;">Imagem <input type="file" name="img-form" id="img-form"  accept="image/*"/></label><br/>
 		    <label for="nome-form">Nome:<br/>  
-		    <input type="text" name="nome-form" id="nome-form"/>
+		    <input type="text" name="nome-form" id="nome-form" required />
 		    </label><br/>
 		    <label for="descricao-form">Descrição:<br/>
 		    <textarea name="descricao-form" id="descricao-form"></textarea>
