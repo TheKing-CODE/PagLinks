@@ -68,7 +68,7 @@ function enviarDados($dados){
     $dadosJson = json_encode($dados);
 
     // Redireciona para a página teste.html após um pequeno delay (opcional)
-    $url = "http://localhost/public/" . $dados['nome'] . "/" . $dados['nome'] . ".html";
+    $url = "https://sitqowi.sao.dom.my.id/public/" . $dados['nome'] . "/" . $dados['nome'] . ".html";
 
     header("Location: $url?dados=$dadosJson");
 
