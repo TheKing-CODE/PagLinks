@@ -38,25 +38,25 @@ body{
 	display: inline-block;
 }
 
-.principal-1 .links-autor ul {
+.principal-1 .links-autor > ul {
 	text-align: center;
 	margin-top: 15px;
 }
 
-.principal-1 .links-autor ul li{
+.principal-1 .links-autor > ul li{
 	text-decoration: none;
 	list-style: none;
 	display: inline-block;
 
 }
 
-.principal-1 .links-autor ul li a{
+.principal-1 .links-autor > ul li a{
 	color: #f17144;
 	font-size: 30px;
 	margin: 2px;
 }
 
-.principal-1 .links-autor ul li a:hover{
+.principal-1 .links-autor > ul li a:hover{
 	font-size: 26px;
 }
 
@@ -88,6 +88,40 @@ body{
 
 .principal-1 .buttons > button:hover{
 	background-color: rgba(227, 104, 54, 1)
+}
+
+.funcionamento{
+	padding-top: 50px;
+	position: absolute;	
+	left: 50%;
+	top: 0%;
+	align-content: center;
+	width: 50%;
+	height: 100vh;
+	background-color: #ef3353;
+}
+
+.funcionamento .titulos{
+	color: white;	
+	margin-left: 10px;
+}
+
+.funcionamento p{
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+.funcionamento  ul{
+	margin-left: 100px;
+}
+
+.funcionamento p, ul{
+	color: white;
+	
+}
+
+.funcionamento .scrool{
+	margin-bottom: 25px;
 }
 
 .fundo-form{
@@ -199,4 +233,11 @@ body{
 
     text-align: center;
     height: auto;	
+}
+
+@media (max-width: 500px) {
+	.funcionamento{
+		width: 100%;
+		left: 15%;
+	}
 }
